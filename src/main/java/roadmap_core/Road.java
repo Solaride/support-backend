@@ -10,6 +10,7 @@ import java.util.List;
 @Setter
 public class Road implements Serializable {
 
+  //TODO: map to roadmap info
   private List<Node> nodes;
 
 
