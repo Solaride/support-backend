@@ -1,25 +1,33 @@
 package api.log.route;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-
 @Entity
-@Table
+@Table(name = "route")
+@Getter
+@Setter
 public class Route {
 
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
+
+  @Column(name = "name")
   private String name;
 
-  //private Route roads;
+  @Column(name = "roads")
+  private roadmap_core.Route roads;
 
-  //private Route roadsOriginal;
+  @Column(name = "roads_original")
+  private roadmap_core.Route roadsOriginal;
 
-
-  private LocalDateTime createdAt;
+  @Column(name = "updated_at")
   private LocalDateTime updatedAt;
+  @Column(name = "synced_at")
   private LocalDateTime syncedAt;
 
 }
