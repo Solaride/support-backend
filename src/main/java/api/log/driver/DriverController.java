@@ -1,9 +1,7 @@
 package api.log.driver;
 
-import api.log.drive.Drive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.List;
 
@@ -28,9 +26,9 @@ public class DriverController {
     return driverService.getDriverById(id);
   }
 
-  @GetMapping("/api/log/driver")
-  public List<Driver> getAllDriversOnDrive(@RequestBody Drive drive) {
-    return driverService.getAllDriversOnDrive(drive);
+  @GetMapping("/api/log/driver/{id}")
+  public List<Driver> getAllDriversOnDrive(@PathVariable("id") Integer id) {
+    return driverService.getAllDriversOnDrive(id);
   }
 
   @PostMapping("api/log/driver")

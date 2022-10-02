@@ -1,9 +1,7 @@
 package api.log.driver;
 
 import api.NotFoundException;
-import api.log.drive.Drive;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -31,9 +29,9 @@ public class DriverService {
             .orElseThrow(() -> new NotFoundException("Driver with id " + id + " does not exist"));
   }
 
-  public List<Driver> getAllDriversOnDrive(Drive drive) {
-    return driverRepository.getDriversByDriveId(drive.getId())
-            .orElseThrow(() -> new NotFoundException("No drivers on drive or drive with id " + drive.getId() + " not found"));
+  public List<Driver> getAllDriversOnDrive(Integer id) {
+    return driverRepository.getDriversByDriveId(id)
+            .orElseThrow(() -> new NotFoundException("No drivers on drive or drive with id " + id + " not found"));
   }
 
   public void addNewDriver(Driver driver) {
