@@ -2,7 +2,17 @@ plugins {
     id 'org.springframework.boot' version '2.7.4'
     id 'io.spring.dependency-management' version '1.0.14.RELEASE'
     id 'java'
+    id "org.flywaydb.flyway" version "9.4.0"
 }
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5433/postgres'
+    user = 'postgres'
+    password = 'postgrespw'
+    schemas = ['public', 'USERSERVICE']
+    cleanDisabled = false
+}
+
 
 group = 'com.solaride'
 version = '0.0.1-SNAPSHOT'
