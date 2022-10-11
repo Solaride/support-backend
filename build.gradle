@@ -28,6 +28,8 @@ repositories {
     mavenCentral()
 }
 
+
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
@@ -39,6 +41,7 @@ dependencies {
     implementation 'org.flywaydb:flyway-core'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'com.fazecast:jSerialComm:2.9.2'
 }
 
 tasks.named('test') {
